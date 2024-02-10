@@ -2,6 +2,9 @@
 extends Node2D
 class_name Room
 
+signal entered
+signal exited
+
 func _ready() -> void:
 	if !Engine.is_editor_hint():
 		RoomManager.rooms.append(self)

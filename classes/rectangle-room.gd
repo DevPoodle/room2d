@@ -53,12 +53,12 @@ func drag_anchor(anchor_index: int) -> void:
 		anchor_type.center:
 			boundaries.position = (mouse_position - boundaries.size * 0.5).snapped(snapping)
 
-func set_boundaries(new_boundaries: Rect2) -> void:
-	boundaries = new_boundaries
-	queue_redraw()
-
 func _draw() -> void:
 	if Engine.is_editor_hint():
 		var drawable_rect := Rect2(boundaries.position - global_position, boundaries.size)
 		var color := ProjectSettings.get_setting("debug/shapes/rooms/primary_color", Color.BLACK)
 		draw_rect(drawable_rect, color, false, -1.0)
+
+func set_boundaries(new_boundaries: Rect2) -> void:
+	boundaries = new_boundaries
+	queue_redraw()

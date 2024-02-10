@@ -1,18 +1,21 @@
 extends Camera2D
 class_name RoomCamera2D
 
+enum interpolation_type {
+	none, constant, linear
+}
+
 @export_node_path("Node2D") var focus_path : NodePath
 @export_range(0.0, 8.0, 0.1) var focus_snap := 1.0
 @export var interpolation := interpolation_type.linear
 @export var interpolation_speed := 16.0
 
-enum interpolation_type {
-	none, constant, linear
-}
+var current_room : Room
 
 @onready var focus : Node2D = get_node(focus_path)
 
 func _ready() -> void:
+	position = focus.position
 	RoomManager.cameras.append(self)
 
 func _exit_tree() -> void:

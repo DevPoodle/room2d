@@ -2,7 +2,7 @@
 extends EditorPlugin
 
 func _enter_tree() -> void:
-	add_autoload_singleton("RoomManager", "res://addons/rooms-2d/room-manager.gd")
+	add_autoload_singleton("RoomManager", "res://addons/rooms2d/room-manager.gd")
 	
 	create_project_setting("debug/shapes/rooms/snapping", Vector2i(32,32))
 	create_project_setting("debug/shapes/rooms/primary_color", Color.BLACK)
