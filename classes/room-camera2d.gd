@@ -6,9 +6,9 @@ enum interpolation_type {
 }
 
 @export_node_path("Node2D") var focus_path : NodePath
-@export_range(0.0, 8.0, 0.1) var focus_snap := 1.0
+@export_range(0.0, 8.0, 0.1) var focus_snap := 1.5
 @export var interpolation := interpolation_type.linear
-@export var interpolation_speed := 16.0
+@export var interpolation_speed := 32.0
 
 var current_room : Room
 

@@ -7,7 +7,6 @@ func _physics_process(delta: float) -> void:
 	for camera in cameras:
 		if camera == null or !camera.enabled:
 			continue
-		
 		var is_camera_in_room := false
 		for room in rooms:
 			if room.is_point_in_room(camera.focus.position):
